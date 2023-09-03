@@ -1,17 +1,19 @@
 import React from "react";
 
 
+
 const Result=({word,phonetic,phonetics,meanings})=>{
     // console.log(phonetic)
     // console.log(phonetics)
     // console.log(meanings)
+    
     return(
         <div className="result">
             <h2>{word}</h2>
             <p>{phonetic}</p>
             {
-                phonetics.map(element=>(
-                    <div>
+                phonetics.map((element,index)=>(
+                    <div key={index}>
                         <audio src={element.audio} controls type="ogg"/>
                         <p>{element.text}</p>
                     </div>

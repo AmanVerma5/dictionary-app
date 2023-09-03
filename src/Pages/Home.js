@@ -10,7 +10,7 @@ import Result from "../Component/Result";
 const Home=()=>{
     let [word,setWord]=useState('');
     const dispatch=useDispatch();
-    const {loading,data,error}=useSelector((state)=>state)
+    const {loading,data,error,history}=useSelector((state)=>state)
 
     useEffect(
         ()=>{
@@ -25,7 +25,7 @@ const Home=()=>{
             .catch(e=>dispatch(postFetchingFailure(e)))
         },[word]
     )
-
+   // console.log(history)
     const saveToLocalStorage = (searchTerm) => {
        
         if (localStorage) {

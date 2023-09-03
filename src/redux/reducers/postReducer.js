@@ -4,6 +4,7 @@ let initialState={
     loading:true,
     data:[],
     error:null,
+    history:[]
 }
 
 const postReducer=(state=initialState,action)=>{
@@ -22,6 +23,7 @@ const postReducer=(state=initialState,action)=>{
                     loading:false,
                     data:action.payload,
                     error:null,
+                    history:[...state.history,action.payload]
                     
                 }
             )
@@ -31,7 +33,7 @@ const postReducer=(state=initialState,action)=>{
                     ...state,
                     loading:false,
                     data:[],
-                    error:action.payload
+                    error:action.payload,
                 }
             )
         default:
