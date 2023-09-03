@@ -59,3 +59,28 @@ a:hover{
     padding:10px;
     margin-left: 10px;
 }
+@media only screen and (max-width:425px){
+    .search-bar button{
+        width:20%;
+
+    }
+    audio{
+        width:100%;
+    }
+}
+@media only screen and (max-width:375px){
+    nav .logo{
+        font-size: 1.8rem
+    }
+    nav a{
+        font-size: 1.3rem !important;
+    }
+}
+@media only screen and (max-width:325px){
+    nav .logo{
+        font-size: 1.5rem
+    }
+    nav a{
+        font-size: 1rem !important;
+    }
+}
