@@ -19,23 +19,13 @@ const Home=()=>{
             axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
             .then(response=>{
                 dispatch(postFetchingSuccess(response.data))
-                saveToLocalStorage(word);
                 //console.log(response.data)
             })
             .catch(e=>dispatch(postFetchingFailure(e)))
         },[word]
     )
    // console.log(history)
-    const saveToLocalStorage = (searchTerm) => {
-       
-        if (localStorage) {
-          const searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || []; 
-          if (!searchHistory.includes(searchTerm)){
-          searchHistory.push(searchTerm);
-          localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
-          }
-        }
-      };
+   
     //console.log(data[0].word)
 
     return(
